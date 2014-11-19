@@ -1,0 +1,10 @@
+pom.xml
+*jar
+/lib/
+/classes/
+.lein-deps-sum
+*~
+/src/clj-stripe/stripe.cjl*
+.nrepl-port
+.lein-failures
+core_config.clj
