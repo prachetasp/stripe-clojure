@@ -9,11 +9,12 @@
 
 (def stripe-api-url "https://api.stripe.com/v1/")
 (defn build-url [[url-ks url-vs] params]
-  (str stripe-api-url
-    (apply str
-      (interpose "/"
-        (filter (comp not nil?)
-          (interleave url-ks (map params url-vs)))))))
+  (->> (map params url-vs)
+       (interleave url-ks)
+       (filter (comp not nil?))
+       (interpose "/")
+       (apply str)
+       (str stripe-api-url)))
 
 (defn make-request
   [params method resource]
