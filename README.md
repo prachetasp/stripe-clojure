@@ -6,7 +6,7 @@ stripe-clojure is intended as a lightweight wrapper around the [Stripe API](http
 Usage
 ================================
 
-stripe-clojure attempts to leverage functional style by allowing the user to call actions on map's. The action's names are those found in the Stripe API docs e.g. (retrieve, create, delete, update etc.) The data contained in each map also uses the same naming scheme found in the Stripe docs.
+stripe-clojure attempts to leverage functional style by allowing the user to execute operations on hashmaps. Operation names are those found in the Stripe API docs e.g. (retrieve, create, delete, update etc.) The data contained in each map also follows the same naming scheme found in the Stripe docs.
 
 The first step is to add the library to the project.clj file:
 
