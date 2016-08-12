@@ -4,7 +4,7 @@
   (:refer-clojure :exclude (list)))
 
 ;; TODO: add support for public token selection?
-(def stripe-tokens (atom {:public "" :private ""}))
+(defonce stripe-tokens (atom {:public "" :private ""}))
 (defn set-tokens! [m] (swap! stripe-tokens (fn [a] (merge a m))))
 
 (def stripe-api-url "https://api.stripe.com/v1/")
@@ -22,7 +22,9 @@
             :query-params (apply dissoc params (second resource))
             :throw-exceptions false
             :as :json
-            :coerce :always})))
+            :coerce :always
+            :debug true
+            })))
 
 (def url-vals {"cards" :card_id
                ;;"charges" :charge_id

@@ -33,7 +33,8 @@
 (s/set-tokens! secret-tokens)
 (deftest functional-test
   (testing "Functional Test -"
-    (let [{id :id :as c} (s/create {:customers customer})
+    (let [_ (s/set-tokens! secret-tokens)
+          {id :id :as c} (s/create {:customers customer})
           c-id {:customer_id id}]
       (testing "create" (is (not (nil? (:id c)))))
       (testing "retrieve" (is (= (s/retrieve {:customers c-id}) c)))
