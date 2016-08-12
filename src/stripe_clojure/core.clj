@@ -22,8 +22,7 @@
             :query-params (apply dissoc params (second resource))
             :throw-exceptions false
             :as :json
-            :coerce :always
-            })))
+            :coerce :always})))
 
 (def url-vals {"cards" :card_id
                ;;"charges" :charge_id
