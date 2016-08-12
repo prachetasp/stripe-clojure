@@ -23,7 +23,6 @@
             :throw-exceptions false
             :as :json
             :coerce :always
-            :debug true
             })))
 
 (def url-vals {"cards" :card_id
